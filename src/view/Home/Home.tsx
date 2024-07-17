@@ -15,17 +15,22 @@ import {
   UpToTopButton,
 } from "./HomeStyled";
 
+import { ButtonType } from "components/CustomButton/CustomButtonModel";
+import { COLORS } from "constants/variables";
+
 import About from "view/About/About";
 import Resume from "view/Resume/Resume";
 import Contact from "view/Contact/Contact";
 import CustomButton from "components/CustomButton/CustomButton";
-import { ButtonType } from "components/CustomButton/CustomButtonModel";
-import { COLORS } from "constants/variables";
+import Presentation from "view/Presentation/Presentation";
 
 const Home = () => {
   return (
     <HomeContainer>
       <HomeLeftContainer>
+        <HomeSection id="presentation-section">
+          <Presentation />
+        </HomeSection>
         <HomeSection id="about-section">
           <About />
         </HomeSection>

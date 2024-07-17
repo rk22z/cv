@@ -2,6 +2,7 @@ export const COLORS = {
   lightGreen: "#8ea69b",
   black: "#1D1D26",
   white: "#fdfdfd",
+  darkGray: "#525252",
 };
 
 export const PADDING = {
@@ -12,6 +13,10 @@ export const PADDING = {
   max32: "clamp(24px, 2.5vw, 32px)",
   max48: "clamp(32px, 3vw, 48px)",
   max64: "clamp(48px, 4vw, 64px)",
+  max76: "clamp(64px, 5vw, 76px)",
+  max100: "clamp(80px, 7.5vw, 100px)",
+  max140: "clamp(100px, 10vw, 140px)",
+  max200: "clamp(160px, 16vw, 200px)",
 };
 
 export const SIZE = {
@@ -32,6 +37,7 @@ export const SIZE = {
 export const FONT_SIZE = {
   max12: "clamp(8px, 1.3vw, 12px)",
   max16: "clamp(12px, 1.5vw, 16px)",
+  max20: "clamp(16px, 1.8vw, 20px)",
   max24: "clamp(16px, 2vw, 24px)",
   max32: "clamp(24px, 2.5vw, 32px)",
   max48: "clamp(32px, 3vw, 48px)",
