@@ -36,7 +36,7 @@ export const HomeRightImage = styled.img`
 
 export const HomeSection = styled.div`
   min-height: 100dvh;
-  /* height: calc(100dvh - ${SIZE.max100}); */
+  height: calc(100dvh - ${SIZE.max100});
 `;
 
 export const UpToTopButton = styled.button`
