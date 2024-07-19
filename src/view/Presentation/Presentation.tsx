@@ -14,9 +14,10 @@ import {
   FunctionWrapper,
   NameWrapper,
   PresentationWrapper,
-  Text,
   ValueLink,
 } from "./PresentationStyled";
+
+import CustomText from "components/CustomText/CustomText";
 
 import { COLORS, FONT_SIZE, FONT_WEIGHT } from "constants/variables";
 
@@ -54,35 +55,33 @@ const Presentation = () => {
     <PresentationContainer>
       <PresentationWrapper>
         <NameWrapper>
-          <Text
+          <CustomText
             color={COLORS.black}
             fontSize={FONT_SIZE.max64}
             fontWeight={FONT_WEIGHT.medium}
-          >
-            Robert Zaharencu
-          </Text>
+            text="Robert Zaharencu"
+          />
         </NameWrapper>
         <FunctionWrapper>
-          <Text
+          <CustomText
             color={COLORS.black}
             fontSize={FONT_SIZE.max48}
             fontWeight={FONT_WEIGHT.regular}
-          >
-            Frontend Developer
-          </Text>
+            text="Frontend Developer"
+          />
         </FunctionWrapper>
       </PresentationWrapper>
       <ContactInfoWrapper>
         {presentationInfo.map((contact) => (
           <ContactRowWrapper key={contact.title}>
             {contact.icon}
-            <Text
+            <CustomText
               color={COLORS.black}
               fontSize={FONT_SIZE.max20}
               fontWeight={FONT_WEIGHT.bold}
-            >
-              {contact.title}
-            </Text>
+              text={contact.title}
+            />
+
             <ValueLink
               color={COLORS.darkGray}
               fontSize={FONT_SIZE.max20}

@@ -1,5 +1,5 @@
-import { COLORS, PADDING, SIZE } from "constants/variables";
 import styled from "styled-components";
+import { COLORS, PADDING, SIZE } from "constants/variables";
 
 export const HeaderContainer = styled.header`
   width: 50%;
@@ -15,6 +15,10 @@ export const HeaderContainer = styled.header`
 export const HeaderLogoWrapper = styled.div``;
 
 export const HeaderLogoText = styled.div``;
+
+export const HeaderLogoImage = styled.img`
+  width: ${SIZE.max64};
+`;
 
 export const HeaderMenuWrapper = styled.div`
   display: flex;

@@ -18,10 +18,12 @@ import {
   SocialMediaLink,
   SocialMediaRowWrapper,
   SocialMediaWrapper,
-  Text,
   ValueLink,
 } from "./ContactStyled";
+
 import { COLORS, FONT_SIZE, FONT_WEIGHT, PADDING } from "constants/variables";
+
+import CustomText from "components/CustomText/CustomText";
 
 const Contact = () => {
   const contactInfo = [
@@ -78,26 +80,25 @@ const Contact = () => {
   return (
     <ContactContainer>
       <ContactTitleWrapper>
-        <Text
+        <CustomText
           color={COLORS.black}
           fontSize={FONT_SIZE.max24}
           fontWeight={FONT_WEIGHT.medium}
           letterSpacing={PADDING.max8}
-        >
-          CONTACT
-        </Text>
+          text="CONTACT"
+        />
       </ContactTitleWrapper>
       <ContactInfoWrapper>
         {contactInfo.map((contact) => (
           <ContactRowWrapper key={contact.title}>
             {contact.icon}
-            <Text
+            <CustomText
               color={COLORS.black}
               fontSize={FONT_SIZE.max20}
               fontWeight={FONT_WEIGHT.bold}
-            >
-              {contact.title}
-            </Text>
+              text={contact.title}
+            />
+
             <ValueLink
               color={COLORS.darkGray}
               fontSize={FONT_SIZE.max20}

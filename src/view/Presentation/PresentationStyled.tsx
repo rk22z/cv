@@ -13,17 +13,6 @@ export const PresentationContainer = styled.div`
   margin: 0 auto;
 `;
 
-export const Text = styled.span<{
-  color: string;
-  fontSize: string;
-  fontWeight: string | number;
-}>`
-  color: ${({ color }) => color};
-  font-size: ${({ fontSize }) => fontSize};
-  font-weight: ${({ fontWeight }) => fontWeight};
-  line-height: 1;
-`;
-
 export const PresentationWrapper = styled.div`
   display: flex;
   flex-direction: column;

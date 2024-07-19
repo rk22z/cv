@@ -3,10 +3,18 @@ import { COLORS, FONT_SIZE, PADDING, SIZE } from "constants/variables";
 
 export const HomeContainer = styled.div`
   display: flex;
+
+  @media (width< 768px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const HomeLeftContainer = styled.div`
   width: 50%;
+
+  @media (width< 768px) {
+    width: 100%;
+  }
 `;
 
 export const HomeRightContainer = styled.div`
@@ -19,6 +27,11 @@ export const HomeRightContainer = styled.div`
   right: 0;
   top: 0;
   height: 100dvh;
+
+  @media (width< 768px) {
+    width: 100%;
+    position: static;
+  }
 `;
 
 export const HomeRightImageWrapper = styled.div`
@@ -35,8 +48,8 @@ export const HomeRightImage = styled.img`
 `;
 
 export const HomeSection = styled.div`
-  min-height: 100dvh;
-  height: calc(100dvh - ${SIZE.max100});
+  min-height: 100vh;
+  /* height: calc(100dvh - ${SIZE.max100}); */
 `;
 
 export const UpToTopButton = styled.button`

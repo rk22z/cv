@@ -1,13 +1,8 @@
 import styled from "styled-components";
-import { PADDING, SIZE } from "constants/variables";
+import { COLORS, PADDING, SIZE } from "constants/variables";
+import { autoShowAnimation } from "helpers/animations";
 
 export const ContactContainer = styled.div`
-  /* width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   width: 100%;
   height: calc(100vh - ${SIZE.max100});
   display: flex;
@@ -17,19 +12,9 @@ export const ContactContainer = styled.div`
   row-gap: ${PADDING.max32};
   width: fit-content;
   margin: 0 auto;
-`;
 
-export const Text = styled.span<{
-  color?: string;
-  fontSize?: string;
-  fontWeight?: string | number;
-  letterSpacing?: string;
-}>`
-  color: ${({ color }) => color};
-  font-size: ${({ fontSize }) => fontSize};
-  font-weight: ${({ fontWeight }) => fontWeight};
-  letter-spacing: ${({ letterSpacing }) => letterSpacing};
-  line-height: 1;
+  animation: ${autoShowAnimation} both;
+  animation-timeline: view(70% 5%);
 `;
 
 export const ContactTitleWrapper = styled.div`
@@ -37,9 +22,6 @@ export const ContactTitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   row-gap: ${PADDING.max16};
-
-  /* width: 100%;
-  height: 100%; */
 `;
 
 export const ContactInfoWrapper = styled.div`

@@ -1,17 +1,6 @@
 import styled from "styled-components";
 
-export const FooterContainer = styled.div`
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-
-  @media (width< 768px) {
-    width: 100%;
-  }
-`;
-
-export const Text = styled.span<{
+export const CustomTextStyled = styled.span<{
   color?: string;
   fontSize?: string;
   fontWeight?: string | number;

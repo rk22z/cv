@@ -1,7 +1,10 @@
 import React from "react";
 
+import logoGreen from "assets/svg/logoGreen.svg";
+
 import {
   HeaderContainer,
+  HeaderLogoImage,
   HeaderLogoText,
   HeaderLogoWrapper,
   HeaderMenuItemWrapper,
@@ -41,7 +44,10 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderLogoWrapper>
-        <HeaderLogoText>Curriculum Vitae</HeaderLogoText>
+        {/* <HeaderLogoText>Curriculum Vitae</HeaderLogoText> */}
+        <HeaderLogoText>
+          <HeaderLogoImage src={logoGreen} />
+        </HeaderLogoText>
       </HeaderLogoWrapper>
       <HeaderMenuWrapper>
         {menuItem?.map((item) => (

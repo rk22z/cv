@@ -1,50 +1,54 @@
-import { PADDING, SIZE } from "constants/variables";
 import styled from "styled-components";
+import { COLORS, PADDING, SIZE } from "constants/variables";
+import { autoShowAnimation } from "helpers/animations";
 
 export const AboutContainer = styled.div`
-  /* width: 100%;
-  height: calc(100vh - ${SIZE.max100});
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; */
-  /* align-items: center; */
-  /* row-gap: ${PADDING.max100};
+  justify-content: center;
+  align-items: center;
+
+  row-gap: ${PADDING.max32};
   width: fit-content;
-  margin: 0 auto; */
+  /* margin: 0 auto; */
+
+  animation: ${autoShowAnimation} both;
+  animation-timeline: view(70% 5%);
 `;
-// export const Text = styled.span<{
-//   color: string;
-//   fontSize: string;
-//   fontWeight: string | number;
-// }>`
-//   color: ${({ color }) => color};
-//   font-size: ${({ fontSize }) => fontSize};
-//   font-weight: ${({ fontWeight }) => fontWeight};
-//   line-height: 1;
-// `;
 
-// export const PresentationWrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   row-gap: ${PADDING.max16};
+export const AboutTitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: ${PADDING.max16};
+  padding-inline: ${PADDING.max8} 0;
+  /* width: fit-content; */
+  /* background-color: red; */
 
-//   /* width: 100%;
-//   height: 100%; */
-// `;
+  position: relative;
 
-// export const NameWrapper = styled.div``;
+  &::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    width: 100%;
+    height: 2px;
+    background-color: ${COLORS.black};
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    width: 100%;
+    height: 2px;
+    background-color: ${COLORS.black};
+  }
+`;
 
-// export const FunctionWrapper = styled.div``;
-
-// export const ContactInfoWrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   row-gap: ${PADDING.max16};
-// `;
-
-// export const ContactRowWrapper = styled.div`
-//   display: flex;
-//   align-items: center;
-//   column-gap: ${PADDING.max8};
-// `;
+export const AboutTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: ${PADDING.max16};
+  max-width: 50%;
+`;
