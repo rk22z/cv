@@ -2,33 +2,35 @@ import React from "react";
 
 import {
   ExperienceContainer,
+  ExperienceElementTextWrapper,
+  ExperienceElementWrapper,
+  ExperienceWrapper,
+  KeyAchievementsContainer,
+  KeyAchievementsElementWrapper,
+  KeyAchievementsWrapper,
   ResumeContainer,
   SkillsContainer,
   SkillsWrapper,
   SkillWrapper,
+  TechStackBox,
+  TechStackContainer,
+  TechStackElementDescriptionWrapper,
+  TechStackElementIconWrapper,
+  TechStackElementWrapper,
+  TechStackWrapper,
   TitleWrapper,
 } from "./ResumeStyled";
-import CustomText from "components/CustomText/CustomText";
 import { COLORS, FONT_SIZE, FONT_WEIGHT } from "constants/variables";
+import {
+  experience,
+  keyAchievements,
+  skills,
+  techStack,
+} from "constants/mocks";
+
+import CustomText from "components/CustomText/CustomText";
 
 const Resume = () => {
-  const skills = [
-    {
-      id: 1,
-      description:
-        "More than 3 years of experience in web development using HTML, CSS, JavaScript, React, and other modern libraries and frameworks.",
-    },
-    {
-      id: 2,
-      description:
-        "Skilled in creating responsive websites and platforms with clean, reusable code, from static pages to fully animated, data-driven applications",
-    },
-    {
-      id: 3,
-      description:
-        "Experienced in code review, mentoring junior developers, and delivering applications widely used by users across the country.",
-    },
-  ];
   return (
     <ResumeContainer>
       <SkillsContainer>
@@ -53,6 +55,37 @@ const Resume = () => {
           ))}
         </SkillsWrapper>
       </SkillsContainer>
+      <TechStackContainer>
+        <TitleWrapper>
+          <CustomText
+            color={COLORS.black}
+            fontSize={FONT_SIZE.max24}
+            fontWeight={FONT_WEIGHT.medium}
+            text="TECH STACK"
+          />
+        </TitleWrapper>
+        <TechStackWrapper>
+          <TechStackBox>
+            {techStack.map((tech) => {
+              return (
+                <TechStackElementWrapper key={tech.id}>
+                  <TechStackElementIconWrapper>
+                    {tech.icon}
+                  </TechStackElementIconWrapper>
+                  <TechStackElementDescriptionWrapper>
+                    <CustomText
+                      color={COLORS.black}
+                      fontSize={FONT_SIZE.max16}
+                      fontWeight={FONT_WEIGHT.regular}
+                      text={tech.description}
+                    />
+                  </TechStackElementDescriptionWrapper>
+                </TechStackElementWrapper>
+              );
+            })}
+          </TechStackBox>
+        </TechStackWrapper>
+      </TechStackContainer>
       <ExperienceContainer>
         <TitleWrapper>
           <CustomText
@@ -62,7 +95,63 @@ const Resume = () => {
             text="EXPERIENCE"
           />
         </TitleWrapper>
+        <ExperienceWrapper>
+          {experience.map((exp) => {
+            return (
+              <ExperienceElementWrapper key={exp.id}>
+                <ExperienceElementTextWrapper>
+                  <CustomText
+                    color={COLORS.black}
+                    fontSize={FONT_SIZE.max20}
+                    fontWeight={FONT_WEIGHT.medium}
+                    text={exp.period}
+                  />
+                </ExperienceElementTextWrapper>
+                <ExperienceElementTextWrapper>
+                  <CustomText
+                    color={COLORS.black}
+                    fontSize={FONT_SIZE.max20}
+                    fontWeight={FONT_WEIGHT.medium}
+                    text={exp.title}
+                  />
+                </ExperienceElementTextWrapper>
+                <ExperienceElementTextWrapper>
+                  <CustomText
+                    color={COLORS.black}
+                    fontSize={FONT_SIZE.max16}
+                    fontWeight={FONT_WEIGHT.regular}
+                    text={exp.company}
+                  />
+                </ExperienceElementTextWrapper>
+              </ExperienceElementWrapper>
+            );
+          })}
+        </ExperienceWrapper>
       </ExperienceContainer>
+      <KeyAchievementsContainer>
+        <TitleWrapper>
+          <CustomText
+            color={COLORS.black}
+            fontSize={FONT_SIZE.max24}
+            fontWeight={FONT_WEIGHT.medium}
+            text="KEY ACHIEVEMENTS"
+          />
+        </TitleWrapper>
+        <KeyAchievementsWrapper>
+          {keyAchievements.map((achievement) => {
+            return (
+              <KeyAchievementsElementWrapper key={achievement.id}>
+                <CustomText
+                  color={COLORS.darkGray}
+                  fontSize={FONT_SIZE.max20}
+                  fontWeight={FONT_WEIGHT.regular}
+                  text={achievement.description}
+                />
+              </KeyAchievementsElementWrapper>
+            );
+          })}
+        </KeyAchievementsWrapper>
+      </KeyAchievementsContainer>
     </ResumeContainer>
   );
 };

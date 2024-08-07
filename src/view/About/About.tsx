@@ -6,9 +6,10 @@ import {
   AboutTitleWrapper,
 } from "./AboutStyled";
 
-import CustomText from "components/CustomText/CustomText";
-
 import { COLORS, FONT_SIZE, FONT_WEIGHT, PADDING } from "constants/variables";
+import { aboutText } from "constants/mocks";
+
+import CustomText from "components/CustomText/CustomText";
 
 const About = () => {
   return (
@@ -29,8 +30,7 @@ const About = () => {
           fontSize={FONT_SIZE.max20}
           fontWeight={FONT_WEIGHT.regular}
           letterSpacing="3px"
-          text="A highly motivated front-end developer, constantly searching to learn more and evolve. Skilled in HTML, CSS, JavaScript and other modern libraries and frameworks. Currently using my knowledge of React to create responsive and user-friendly websites and web applications.
-"
+          text={aboutText}
         />
       </AboutTextWrapper>
     </AboutContainer>

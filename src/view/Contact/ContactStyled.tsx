@@ -74,4 +74,5 @@ export const SocialMediaLink = styled.a<{
   font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ fontWeight }) => fontWeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
+  text-decoration: ${COLORS.darkGray} underline;
 `;

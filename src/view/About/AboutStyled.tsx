@@ -23,16 +23,13 @@ export const AboutTitleWrapper = styled.div`
   justify-content: center;
   row-gap: ${PADDING.max16};
   padding-inline: ${PADDING.max8} 0;
-  /* width: fit-content; */
-  /* background-color: red; */
-
   position: relative;
 
   &::before {
     content: "";
     position: absolute;
     right: 100%;
-    width: 100%;
+    width: 50%;
     height: 2px;
     background-color: ${COLORS.black};
   }
@@ -40,7 +37,7 @@ export const AboutTitleWrapper = styled.div`
     content: "";
     position: absolute;
     left: 100%;
-    width: 100%;
+    width: 50%;
     height: 2px;
     background-color: ${COLORS.black};
   }

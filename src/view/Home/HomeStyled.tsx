@@ -35,7 +35,6 @@ export const HomeRightContainer = styled.div`
 `;
 
 export const HomeRightImageWrapper = styled.div`
-  width: 40%;
   width: ${SIZE.max500};
 `;
 

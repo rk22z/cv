@@ -1,12 +1,3 @@
-import React from "react";
-
-import {
-  AiOutlinePhone,
-  AiOutlineMail,
-  AiOutlineGlobal,
-  AiOutlineHome,
-} from "react-icons/ai";
-
 import {
   PresentationContainer,
   ContactInfoWrapper,
@@ -17,40 +8,12 @@ import {
   ValueLink,
 } from "./PresentationStyled";
 
+import { COLORS, FONT_SIZE, FONT_WEIGHT } from "constants/variables";
+import { presentationInfo } from "constants/mocks";
+
 import CustomText from "components/CustomText/CustomText";
 
-import { COLORS, FONT_SIZE, FONT_WEIGHT } from "constants/variables";
-
 const Presentation = () => {
-  const presentationInfo = [
-    {
-      icon: <AiOutlinePhone fontSize={20} />,
-      title: "Phone",
-      value: "tel:0745338611",
-      displayedValue: "0745 338 611",
-    },
-    {
-      icon: <AiOutlineMail fontSize={20} />,
-      title: "Email",
-      value: "mailto:robert.zaharencu@gmail.com",
-      target: "_blank",
-      displayedValue: "robert.zaharencu@gmail.com",
-    },
-    {
-      icon: <AiOutlineGlobal fontSize={20} />,
-      title: "Website",
-      value: "https://github.com/rk22z",
-      target: "_blank",
-      displayedValue: "https://github.com/rk22z",
-    },
-    {
-      icon: <AiOutlineHome fontSize={20} />,
-      title: "Address",
-      value: "https://maps.app.goo.gl/8HBV2N5W2BEFUn5y7",
-      target: "_blank",
-      displayedValue: "Bucharest, Romania",
-    },
-  ];
   return (
     <PresentationContainer>
       <PresentationWrapper>
@@ -72,7 +35,7 @@ const Presentation = () => {
         </FunctionWrapper>
       </PresentationWrapper>
       <ContactInfoWrapper>
-        {presentationInfo.map((contact) => (
+        {presentationInfo?.map((contact) => (
           <ContactRowWrapper key={contact.title}>
             {contact.icon}
             <CustomText

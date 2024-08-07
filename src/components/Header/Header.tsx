@@ -53,7 +53,7 @@ const Header = () => {
         {menuItem?.map((item) => (
           <HeaderMenuItemWrapper key={item.id}>
             <CustomButton
-              text={item.name}
+              text={item.name.toUpperCase()}
               type={ButtonType.HEADER}
               onClick={() => handleClickScroll(`${item.name}-section`)}
             />
